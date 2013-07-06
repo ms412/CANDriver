@@ -9,13 +9,13 @@
 #ifndef FIFO_H_
 #define FIFO_H_
 
-template <class CBufferType, int BufferSize=32>
+template <class FifoType, int BufferSize=32>
 
-class CBuffer
+class Fifo
 {
 	public:
 	//Constructor
-	CBuffer(): m_put(0), m_get(0) {}
+	Fifo(): m_put(0), m_get(0) {}
 
 	bool isEmpty() {return (m_put == m_get);}
 	bool isFull(){
@@ -24,7 +24,7 @@ class CBuffer
 		return temp == m_get;
 	}
 
-	bool Get(CBufferType &Slot){
+	bool Get(FifoType &Slot){
 		if (isEmpty())
 		return false;
 		Slot = m_Slots[m_get];
@@ -32,7 +32,7 @@ class CBuffer
 		return true;
 	}
 
-	bool Put(const CBufferType &Slot){
+	bool Put(const FifoType &Slot){
 		if (isFull())
 		return false;
 		m_Slots[m_put] = Slot;
@@ -45,7 +45,7 @@ class CBuffer
 	}
 
 	private:
-	CBufferType m_Slots[BufferSize+1];
+	FifoType m_Slots[BufferSize+1];
 	int m_put, m_get;
 	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
 

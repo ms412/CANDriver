@@ -55,10 +55,10 @@ bool CanDriver::IOControl(uint8_t MObId,  uint8_t MObMode, uint32_t CANAddrLow, 
 	CanPageSet(MObId);
 
 	//calculate and set mask
-	CanMaskExtSet(~(CANAddrHigh - CANAddrLow));
+	CanMaskSet_Ext(~(CANAddrHigh - CANAddrLow));
 
 	//calculate and set CAN ID
-	CanAddrExtSet((~(CANAddrHigh - CANAddrLow)) & CANAddrLow);
+	CanAddrSet_Ext((~(CANAddrHigh - CANAddrLow)) & CANAddrLow);
 
 	// set Mode of MOb
 	switch(MObMode)
@@ -94,4 +94,132 @@ bool CanDriver::CanSpeed(uint8_t Baudrate){
 	CANBT3		= 0x37;
 	
 	return true;
+}
+
+bool CanDriver::Receive(CanPacket *MOb){
+		if (RxBuffer.isEmpty()){
+			return false;
+		}
+		RxBuffer.Get(*MOb);
+		return true;	
+}
+
+bool CanDriver::Send(CanPacket *MOb){
+	uint8_t savepage;
+	uint8_t mob;
+	
+	savepage = CanPageGet();
+		
+	//SET_CANPAGE(MOb->number);
+	CanPageSet(MOb->MObID);
+			
+	CANCDMOB = MOb->length;
+
+	CanAddrSet_Ext(MOb->address);
+	
+	//SET_EXTENDED_ID(mob);
+		
+	for (uint8_t i=0; i < MOb->length; i++){
+		CANMSG = MOb->data[i];
+	}
+		
+	MObEnableTx();
+		
+	//while(!getbit(CANSTMOB, TXOK));
+	while (!CANSTMOB &(1<< TXOK))
+		
+	//clearbit(CANSTMOB, TXOK);
+
+	//PORTB ^= (1<<PB7);
+		
+	return mob;
+}
+
+void CanDriver::IrqService(void){
+	uint8_t savepage;
+	uint8_t MOb, i;
+	CanPacket MObRx, MObTx;
+	
+
+	if ((CANHPMOB & 0xf0) != 0xf0){
+		//save current CANPage and set new one
+		savepage = CanPageGet();
+	
+		MOb = (CANHPMOB >> 4);
+		
+		CanPageSet(MOb);
+
+		//if Rx interrupt is present
+		if (CANSTMOB & (1<<RXOK)){
+			PORTB ^= (1<<PB7);
+			//				MObRx.number = mob;
+			MObRx.length = CANCDMOB & 0x0f;
+			CanAddrGet_Ext(MObRx.address);
+			for (i = 0; i < MObRx.length; i++){
+				MObRx.data[i] = CANMSG;
+			}
+
+			if (!RxBuffer.isFull()){
+				RxBuffer.Put(MObRx);
+			}
+			CANSTMOB &= 0;
+			//MOb_ENABLE_RX;
+			
+			//MOB_IRQ_ENABLE(mob);
+			
+			}else if (CANSTMOB & (1<<TXOK)){  //TX interrupt
+			//t_CAN.SetTxFrames();
+			//	t_CAN.send_buff();
+		//	CANSTMOB &= ~_BV(TXOK);
+			//if (!TxBuffer.isEmpty()){
+			//	TxBuffer.Get(MObTx);
+			//	CANCDMOB = 0;
+			//	CANSTMOB = 0;
+			//	SET_EXTENDED_ID(MObTx.id);
+			//	CANCDMOB |= (MObTx.length & 0x0F);
+			//	for (i = 0; i < MObTx.length; i++){
+			//		CANMSG = MObTx.data[i];
+			//	}
+			//	MOb_ENABLE_TX;
+			}
+			
+			
+			//MOb_DISABLE;
+			//				CANCDMOB = 0x00;
+			//CANSTMOB &= 0;
+			//MOB_IRQ_DISABLE(mob);
+			//temp = CANSTMOB;
+			//temp = 0;
+			//CANSTMOB = temp;
+			//MOb_ENABLE_TX;
+			//	CANSTMOB &= 0;
+			//	CANCDMOB = 0;
+			
+			
+			
+
+			}else{
+			//t_CAN.SetError();
+			CANGIT |=0;
+		}
+
+	
+	//CANSTMOB &= 0;
+	//temp = CANSTMOB;
+	//temp = 0;
+	//CANSTMOB = temp;
+	
+	//temp = CANCDMOB;
+	//temp = 0;
+	//CANCDMOB = temp;
+	
+	
+	CANPAGE = savepage;
+	
+	
+}
+
+void CANIT_vect()
+{
+	//t_CAN.IrqService();
 }

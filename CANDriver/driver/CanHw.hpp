@@ -10,7 +10,7 @@
 #define CANHW_H_
 
 #include <avr/io.h>
-#include "utils/fifo.hpp"
+#include "../utils/fifo.hpp"
 
 
  typedef struct{
@@ -23,14 +23,15 @@
   enum Baudrate {CAN_50K, CAN_100K, CAN_125K, CAN_200K, CAN_250K, CAN_500K, CAN_1000K };
 
   enum MObMode{DISABLED, TX_DATA, RX_DATA, TX_REMOTE, AUTO_REPLY};
+	  
+  //static Fifo<CanPacket,5> TxBuffer;
+  //static Fifo<CanPacket,5> RxBuffer;
 
 class CanDriver 
 {
 public:
 	CanDriver(){
 		t_MaxMob = 15;
-		static CBuffer<struct MOb_struct,5> TxBuffer;
-		static CBuffer<struct MOb_struct,5> RxBuffer;
 	}
 	
 	bool CanInit(uint8_t Baudrate);
@@ -38,7 +39,12 @@ public:
 	bool Receive(CanPacket *MOb);
 	bool Send(CanPacket *MOb);
 	
+	void IrqService(void);
+	
 private:
+
+	static Fifo<CanPacket,5> TxBuffer;
+	static Fifo<CanPacket,5> RxBuffer;
 	bool CanSpeed(uint8_t Baudrate);
 		      
 	bool CanReset(void){
@@ -63,7 +69,7 @@ private:
 		return (CANPAGE >> 4);
 	}
 	
-	bool CanMaskExtSet(uint32_t maskId){
+	bool CanMaskSet_Ext(uint32_t maskId){
 		CANIDM1 = (((*((uint8_t *)(&maskId)+3))<<3)+((*((uint8_t *)(&maskId)+2))>>5));
 		CANIDM2 = (((*((uint8_t *)(&maskId)+2))<<3)+((*((uint8_t *)(&maskId)+1))>>5));
 		CANIDM3 = (((*((uint8_t *)(&maskId)+1))<<3)+((* (uint8_t *)(&maskId)   )>>5));
@@ -72,12 +78,20 @@ private:
 		return true;
 	}
 	
-	bool CanAddrExtSet(uint32_t maskId){
+	bool CanAddrSet_Ext(uint32_t maskId){
 		CANIDT1 = (((*((uint8_t *)(&maskId)+3))<<3)+((*((uint8_t *)(&maskId)+2))>>5));
 		CANIDT2 = (((*((uint8_t *)(&maskId)+2))<<3)+((*((uint8_t *)(&maskId)+1))>>5));
 		CANIDT3 = (((*((uint8_t *)(&maskId)+1))<<3)+((* (uint8_t *)(&maskId)   )>>5));
 		CANIDT4 = ((*  (uint8_t *)(&maskId)   )<<3);
 		CANCDMOB |= (1<<IDE);
+		return true;
+	}
+	
+	bool CanAddrGet_Ext(uint32_t address){
+		*((uint8_t *)(&(address))+3) =  CANIDT1>>3; 
+		*((uint8_t *)(&(address))+2) = (CANIDT2>>3)+(CANIDT1<<5);
+		*((uint8_t *)(&(address))+1) = (CANIDT3>>3)+(CANIDT2<<5);
+	    *((uint8_t *)(&(address))  ) = (CANIDT4>>3)+(CANIDT3<<5); 
 		return true;
 	}
 	

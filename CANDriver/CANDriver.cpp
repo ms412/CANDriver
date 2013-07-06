@@ -7,9 +7,11 @@
 
 
 #include <avr/io.h>
+#include "driver/CanHw.hpp"
 
 int main(void)
 {
+	CanDriver t_Can();
     while(1)
     {
         //TODO:: Please write your application code 
