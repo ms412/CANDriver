@@ -24,8 +24,9 @@
 
   enum MObMode{DISABLED, TX_DATA, RX_DATA, TX_REMOTE, AUTO_REPLY};
 	  
-  //static Fifo<CanPacket,5> TxBuffer;
-  //static Fifo<CanPacket,5> RxBuffer;
+  extern "C" void CANIT_vect(void) __attribute__ ((signal));
+	  
+  //extern class CanDriver t_CAN;
 
 class CanDriver 
 {

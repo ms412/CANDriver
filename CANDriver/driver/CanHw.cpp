@@ -167,53 +167,13 @@ void CanDriver::IrqService(void){
 			
 			//MOB_IRQ_ENABLE(mob);
 			
-			}else if (CANSTMOB & (1<<TXOK)){  //TX interrupt
-			//t_CAN.SetTxFrames();
-			//	t_CAN.send_buff();
-		//	CANSTMOB &= ~_BV(TXOK);
-			//if (!TxBuffer.isEmpty()){
-			//	TxBuffer.Get(MObTx);
-			//	CANCDMOB = 0;
-			//	CANSTMOB = 0;
-			//	SET_EXTENDED_ID(MObTx.id);
-			//	CANCDMOB |= (MObTx.length & 0x0F);
-			//	for (i = 0; i < MObTx.length; i++){
-			//		CANMSG = MObTx.data[i];
-			//	}
-			//	MOb_ENABLE_TX;
-			}
-			
-			
-			//MOb_DISABLE;
-			//				CANCDMOB = 0x00;
-			//CANSTMOB &= 0;
-			//MOB_IRQ_DISABLE(mob);
-			//temp = CANSTMOB;
-			//temp = 0;
-			//CANSTMOB = temp;
-			//MOb_ENABLE_TX;
-			//	CANSTMOB &= 0;
-			//	CANCDMOB = 0;
-			
-			
-			
+			}else if (CANSTMOB & (1<<TXOK)){  	
 
 			}else{
-			//t_CAN.SetError();
-			CANGIT |=0;
-		}
 
-	
-	//CANSTMOB &= 0;
-	//temp = CANSTMOB;
-	//temp = 0;
-	//CANSTMOB = temp;
-	
-	//temp = CANCDMOB;
-	//temp = 0;
-	//CANCDMOB = temp;
-	
-	
+			CANGIT |=0;
+			}	
+		}
 	CANPAGE = savepage;
 	
 	
