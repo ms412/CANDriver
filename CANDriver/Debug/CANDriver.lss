@@ -3,135 +3,1595 @@ CANDriver.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  000000ac  00000120  2**0
+  0 .data         00000000  00800100  00000986  00000a1a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         000000ac  00000000  00000000  00000074  2**1
+  1 .text         00000986  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .stab         000006cc  00000000  00000000  00000120  2**2
+  2 .bss          00000064  00800100  00800100  00000a1a  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  00000a1c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  3 .stabstr      00000097  00000000  00000000  000007ec  2**0
+  4 .stabstr      00000097  00000000  00000000  000010e8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .comment      0000002f  00000000  00000000  00000883  2**0
+  5 .comment      0000002f  00000000  00000000  0000117f  2**0
                   CONTENTS, READONLY
-  5 .debug_aranges 00000070  00000000  00000000  000008b2  2**0
+  6 .debug_aranges 000000f0  00000000  00000000  000011ae  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000ddc  00000000  00000000  00000922  2**0
+  7 .debug_info   00002610  00000000  00000000  0000129e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000036f  00000000  00000000  000016fe  2**0
+  8 .debug_abbrev 00000a6d  00000000  00000000  000038ae  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000004d9  00000000  00000000  00001a6d  2**0
+  9 .debug_line   00000c29  00000000  00000000  0000431b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000148  00000000  00000000  00001f48  2**2
+ 10 .debug_frame  0000033c  00000000  00000000  00004f44  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000005e2  00000000  00000000  00002090  2**0
+ 11 .debug_str    0000091c  00000000  00000000  00005280  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000009f3  00000000  00000000  00002672  2**0
+ 12 .debug_loc    0000114d  00000000  00000000  00005b9c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 000000b0  00000000  00000000  00003065  2**0
+ 13 .debug_ranges 00000110  00000000  00000000  00006ce9  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	49 c0       	rjmp	.+146    	; 0x94 <__ctors_end>
+   0:	4b c0       	rjmp	.+150    	; 0x98 <__ctors_end>
    2:	00 00       	nop
-   4:	4f c0       	rjmp	.+158    	; 0xa4 <__bad_interrupt>
+   4:	68 c0       	rjmp	.+208    	; 0xd6 <__bad_interrupt>
    6:	00 00       	nop
-   8:	4d c0       	rjmp	.+154    	; 0xa4 <__bad_interrupt>
+   8:	66 c0       	rjmp	.+204    	; 0xd6 <__bad_interrupt>
    a:	00 00       	nop
-   c:	4b c0       	rjmp	.+150    	; 0xa4 <__bad_interrupt>
+   c:	64 c0       	rjmp	.+200    	; 0xd6 <__bad_interrupt>
    e:	00 00       	nop
-  10:	49 c0       	rjmp	.+146    	; 0xa4 <__bad_interrupt>
+  10:	62 c0       	rjmp	.+196    	; 0xd6 <__bad_interrupt>
   12:	00 00       	nop
-  14:	47 c0       	rjmp	.+142    	; 0xa4 <__bad_interrupt>
+  14:	60 c0       	rjmp	.+192    	; 0xd6 <__bad_interrupt>
   16:	00 00       	nop
-  18:	45 c0       	rjmp	.+138    	; 0xa4 <__bad_interrupt>
+  18:	5e c0       	rjmp	.+188    	; 0xd6 <__bad_interrupt>
   1a:	00 00       	nop
-  1c:	43 c0       	rjmp	.+134    	; 0xa4 <__bad_interrupt>
+  1c:	5c c0       	rjmp	.+184    	; 0xd6 <__bad_interrupt>
   1e:	00 00       	nop
-  20:	41 c0       	rjmp	.+130    	; 0xa4 <__bad_interrupt>
+  20:	5a c0       	rjmp	.+180    	; 0xd6 <__bad_interrupt>
   22:	00 00       	nop
-  24:	3f c0       	rjmp	.+126    	; 0xa4 <__bad_interrupt>
+  24:	58 c0       	rjmp	.+176    	; 0xd6 <__bad_interrupt>
   26:	00 00       	nop
-  28:	3d c0       	rjmp	.+122    	; 0xa4 <__bad_interrupt>
+  28:	56 c0       	rjmp	.+172    	; 0xd6 <__bad_interrupt>
   2a:	00 00       	nop
-  2c:	3b c0       	rjmp	.+118    	; 0xa4 <__bad_interrupt>
+  2c:	54 c0       	rjmp	.+168    	; 0xd6 <__bad_interrupt>
   2e:	00 00       	nop
-  30:	39 c0       	rjmp	.+114    	; 0xa4 <__bad_interrupt>
+  30:	52 c0       	rjmp	.+164    	; 0xd6 <__bad_interrupt>
   32:	00 00       	nop
-  34:	37 c0       	rjmp	.+110    	; 0xa4 <__bad_interrupt>
+  34:	50 c0       	rjmp	.+160    	; 0xd6 <__bad_interrupt>
   36:	00 00       	nop
-  38:	35 c0       	rjmp	.+106    	; 0xa4 <__bad_interrupt>
+  38:	4e c0       	rjmp	.+156    	; 0xd6 <__bad_interrupt>
   3a:	00 00       	nop
-  3c:	33 c0       	rjmp	.+102    	; 0xa4 <__bad_interrupt>
+  3c:	4c c0       	rjmp	.+152    	; 0xd6 <__bad_interrupt>
   3e:	00 00       	nop
-  40:	31 c0       	rjmp	.+98     	; 0xa4 <__bad_interrupt>
+  40:	4a c0       	rjmp	.+148    	; 0xd6 <__bad_interrupt>
   42:	00 00       	nop
-  44:	2f c0       	rjmp	.+94     	; 0xa4 <__bad_interrupt>
+  44:	48 c0       	rjmp	.+144    	; 0xd6 <__bad_interrupt>
   46:	00 00       	nop
-  48:	2d c0       	rjmp	.+90     	; 0xa4 <__bad_interrupt>
+  48:	ff c2       	rjmp	.+1534   	; 0x648 <__vector_18>
   4a:	00 00       	nop
-  4c:	2b c0       	rjmp	.+86     	; 0xa4 <__bad_interrupt>
+  4c:	44 c0       	rjmp	.+136    	; 0xd6 <__bad_interrupt>
   4e:	00 00       	nop
-  50:	29 c0       	rjmp	.+82     	; 0xa4 <__bad_interrupt>
+  50:	42 c0       	rjmp	.+132    	; 0xd6 <__bad_interrupt>
   52:	00 00       	nop
-  54:	27 c0       	rjmp	.+78     	; 0xa4 <__bad_interrupt>
+  54:	6a c3       	rjmp	.+1748   	; 0x72a <__vector_21>
   56:	00 00       	nop
-  58:	25 c0       	rjmp	.+74     	; 0xa4 <__bad_interrupt>
+  58:	23 c3       	rjmp	.+1606   	; 0x6a0 <__vector_22>
   5a:	00 00       	nop
-  5c:	23 c0       	rjmp	.+70     	; 0xa4 <__bad_interrupt>
+  5c:	3c c0       	rjmp	.+120    	; 0xd6 <__bad_interrupt>
   5e:	00 00       	nop
-  60:	21 c0       	rjmp	.+66     	; 0xa4 <__bad_interrupt>
+  60:	3a c0       	rjmp	.+116    	; 0xd6 <__bad_interrupt>
   62:	00 00       	nop
-  64:	1f c0       	rjmp	.+62     	; 0xa4 <__bad_interrupt>
+  64:	38 c0       	rjmp	.+112    	; 0xd6 <__bad_interrupt>
   66:	00 00       	nop
-  68:	1d c0       	rjmp	.+58     	; 0xa4 <__bad_interrupt>
+  68:	36 c0       	rjmp	.+108    	; 0xd6 <__bad_interrupt>
   6a:	00 00       	nop
-  6c:	1b c0       	rjmp	.+54     	; 0xa4 <__bad_interrupt>
+  6c:	34 c0       	rjmp	.+104    	; 0xd6 <__bad_interrupt>
   6e:	00 00       	nop
-  70:	19 c0       	rjmp	.+50     	; 0xa4 <__bad_interrupt>
+  70:	32 c0       	rjmp	.+100    	; 0xd6 <__bad_interrupt>
   72:	00 00       	nop
-  74:	17 c0       	rjmp	.+46     	; 0xa4 <__bad_interrupt>
+  74:	30 c0       	rjmp	.+96     	; 0xd6 <__bad_interrupt>
   76:	00 00       	nop
-  78:	15 c0       	rjmp	.+42     	; 0xa4 <__bad_interrupt>
+  78:	2e c0       	rjmp	.+92     	; 0xd6 <__bad_interrupt>
   7a:	00 00       	nop
-  7c:	13 c0       	rjmp	.+38     	; 0xa4 <__bad_interrupt>
+  7c:	2c c0       	rjmp	.+88     	; 0xd6 <__bad_interrupt>
   7e:	00 00       	nop
-  80:	11 c0       	rjmp	.+34     	; 0xa4 <__bad_interrupt>
+  80:	08 c4       	rjmp	.+2064   	; 0x892 <__vector_32>
   82:	00 00       	nop
-  84:	0f c0       	rjmp	.+30     	; 0xa4 <__bad_interrupt>
+  84:	c1 c3       	rjmp	.+1922   	; 0x808 <__vector_33>
   86:	00 00       	nop
-  88:	0d c0       	rjmp	.+26     	; 0xa4 <__bad_interrupt>
+  88:	26 c0       	rjmp	.+76     	; 0xd6 <__bad_interrupt>
   8a:	00 00       	nop
-  8c:	0b c0       	rjmp	.+22     	; 0xa4 <__bad_interrupt>
+  8c:	24 c0       	rjmp	.+72     	; 0xd6 <__bad_interrupt>
   8e:	00 00       	nop
-  90:	09 c0       	rjmp	.+18     	; 0xa4 <__bad_interrupt>
+  90:	22 c0       	rjmp	.+68     	; 0xd6 <__bad_interrupt>
 	...
 
-00000094 <__ctors_end>:
-  94:	11 24       	eor	r1, r1
-  96:	1f be       	out	0x3f, r1	; 63
-  98:	cf ef       	ldi	r28, 0xFF	; 255
-  9a:	d0 e1       	ldi	r29, 0x10	; 16
-  9c:	de bf       	out	0x3e, r29	; 62
-  9e:	cd bf       	out	0x3d, r28	; 61
-  a0:	02 d0       	rcall	.+4      	; 0xa6 <main>
-  a2:	02 c0       	rjmp	.+4      	; 0xa8 <_exit>
+00000094 <__ctors_start>:
+  94:	d1 03       	fmuls	r21, r17
+  96:	85 04       	cpc	r8, r5
 
-000000a4 <__bad_interrupt>:
-  a4:	ad cf       	rjmp	.-166    	; 0x0 <__vectors>
+00000098 <__ctors_end>:
+  98:	11 24       	eor	r1, r1
+  9a:	1f be       	out	0x3f, r1	; 63
+  9c:	cf ef       	ldi	r28, 0xFF	; 255
+  9e:	d0 e1       	ldi	r29, 0x10	; 16
+  a0:	de bf       	out	0x3e, r29	; 62
+  a2:	cd bf       	out	0x3d, r28	; 61
 
-000000a6 <main>:
+000000a4 <__do_clear_bss>:
+  a4:	21 e0       	ldi	r18, 0x01	; 1
+  a6:	a0 e0       	ldi	r26, 0x00	; 0
+  a8:	b1 e0       	ldi	r27, 0x01	; 1
+  aa:	01 c0       	rjmp	.+2      	; 0xae <.do_clear_bss_start>
 
-#include <avr/io.h>
+000000ac <.do_clear_bss_loop>:
+  ac:	1d 92       	st	X+, r1
+
+000000ae <.do_clear_bss_start>:
+  ae:	a4 36       	cpi	r26, 0x64	; 100
+  b0:	b2 07       	cpc	r27, r18
+  b2:	e1 f7       	brne	.-8      	; 0xac <.do_clear_bss_loop>
+
+000000b4 <__do_global_ctors>:
+  b4:	10 e0       	ldi	r17, 0x00	; 0
+  b6:	c8 e9       	ldi	r28, 0x98	; 152
+  b8:	d0 e0       	ldi	r29, 0x00	; 0
+  ba:	00 e0       	ldi	r16, 0x00	; 0
+  bc:	05 c0       	rjmp	.+10     	; 0xc8 <__do_global_ctors+0x14>
+  be:	22 97       	sbiw	r28, 0x02	; 2
+  c0:	01 09       	sbc	r16, r1
+  c2:	fe 01       	movw	r30, r28
+  c4:	0b bf       	out	0x3b, r16	; 59
+  c6:	45 d4       	rcall	.+2186   	; 0x952 <__tablejump_elpm__>
+  c8:	c4 39       	cpi	r28, 0x94	; 148
+  ca:	d1 07       	cpc	r29, r17
+  cc:	80 e0       	ldi	r24, 0x00	; 0
+  ce:	08 07       	cpc	r16, r24
+  d0:	b1 f7       	brne	.-20     	; 0xbe <__do_global_ctors+0xa>
+  d2:	02 d0       	rcall	.+4      	; 0xd8 <main>
+  d4:	56 c4       	rjmp	.+2220   	; 0x982 <_exit>
+
+000000d6 <__bad_interrupt>:
+  d6:	94 cf       	rjmp	.-216    	; 0x0 <__vectors>
+
+000000d8 <main>:
 #include "driver/CanHw.hpp"
+#include "driver/usart0.hpp"
+#include "driver/usart1.hpp"
 
 int main(void)
 {
-  a6:	ff cf       	rjmp	.-2      	; 0xa6 <main>
+  d8:	cf 93       	push	r28
+  da:	df 93       	push	r29
+  dc:	cd b7       	in	r28, 0x3d	; 61
+  de:	de b7       	in	r29, 0x3e	; 62
+  e0:	ed 97       	sbiw	r28, 0x3d	; 61
+  e2:	0f b6       	in	r0, 0x3f	; 63
+  e4:	f8 94       	cli
+  e6:	de bf       	out	0x3e, r29	; 62
+  e8:	0f be       	out	0x3f, r0	; 63
+  ea:	cd bf       	out	0x3d, r28	; 61
+	CanPacket MOb;
+	uint8_t counter = 0;
+	
+	
+	DDRD = 0xff;
+  ec:	8f ef       	ldi	r24, 0xFF	; 255
+  ee:	8a b9       	out	0x0a, r24	; 10
+	DDRB = 0xff;
+  f0:	84 b9       	out	0x04, r24	; 4
 
-000000a8 <_exit>:
-  a8:	f8 94       	cli
+class CanDriver 
+{
+public:
+	CanDriver(){
+		t_MaxMob = 15;
+  f2:	8f e0       	ldi	r24, 0x0F	; 15
+  f4:	8d af       	std	Y+61, r24	; 0x3d
 
-000000aa <__stop_program>:
-  aa:	ff cf       	rjmp	.-2      	; 0xaa <__stop_program>
+public:
+	// constructor
+	Uart0(uint32_t baudrate){
+
+	m_txByte = 0;
+  f6:	19 8e       	std	Y+25, r1	; 0x19
+  f8:	18 8e       	std	Y+24, r1	; 0x18
+	m_rxByte = 0;
+  fa:	1b 8e       	std	Y+27, r1	; 0x1b
+  fc:	1a 8e       	std	Y+26, r1	; 0x1a
+	m_error =0;
+  fe:	1d 8e       	std	Y+29, r1	; 0x1d
+ 100:	1c 8e       	std	Y+28, r1	; 0x1c
+
+	UBRR0H = (unsigned char)(UBRR_CALC(baudrate,F_CPU) >> 8);
+ 102:	10 92 c5 00 	sts	0x00C5, r1
+	UBRR0L = (unsigned char) UBRR_CALC(baudrate,F_CPU);
+ 106:	90 e1       	ldi	r25, 0x10	; 16
+ 108:	90 93 c4 00 	sts	0x00C4, r25
+
+	UCSR0A = (1<<U2X0);
+ 10c:	82 e0       	ldi	r24, 0x02	; 2
+ 10e:	80 93 c0 00 	sts	0x00C0, r24
+
+    /* Enable UART receiver and transmitter */
+    UCSR0C |= (0<<UMSEL0) | (0<<UPM0) | (0<<USBS0) | (3<<UCSZ0);
+ 112:	e2 ec       	ldi	r30, 0xC2	; 194
+ 114:	f0 e0       	ldi	r31, 0x00	; 0
+ 116:	20 81       	ld	r18, Z
+ 118:	26 60       	ori	r18, 0x06	; 6
+ 11a:	20 83       	st	Z, r18
+
+	/* Enable UART receiver and transmitter */
+    UCSR0B |= (1<<TXEN0) | (1<<RXEN0 | (1 << RXCIE0));
+ 11c:	e1 ec       	ldi	r30, 0xC1	; 193
+ 11e:	f0 e0       	ldi	r31, 0x00	; 0
+ 120:	20 81       	ld	r18, Z
+ 122:	28 69       	ori	r18, 0x98	; 152
+ 124:	20 83       	st	Z, r18
+
+public:
+	// constructor
+	Uart1(uint32_t baudrate){
+
+	m_txByte = 0;
+ 126:	1a 82       	std	Y+2, r1	; 0x02
+ 128:	19 82       	std	Y+1, r1	; 0x01
+	m_rxByte = 0;
+ 12a:	1c 82       	std	Y+4, r1	; 0x04
+ 12c:	1b 82       	std	Y+3, r1	; 0x03
+	m_error =0;
+ 12e:	1e 82       	std	Y+6, r1	; 0x06
+ 130:	1d 82       	std	Y+5, r1	; 0x05
+
+	UBRR1H = (unsigned char)(UBRR_CALC(baudrate,F_CPU) >> 8);
+ 132:	10 92 cd 00 	sts	0x00CD, r1
+	UBRR1L = (unsigned char) UBRR_CALC(baudrate,F_CPU);
+ 136:	90 93 cc 00 	sts	0x00CC, r25
+
+	UCSR1A = (1<<U2X0);
+ 13a:	80 93 c8 00 	sts	0x00C8, r24
+
+    /* Enable UART receiver and transmitter */
+    UCSR1C |= (0<<UMSEL0) | (0<<UPM0) | (0<<USBS0) | (3<<UCSZ0);
+ 13e:	ea ec       	ldi	r30, 0xCA	; 202
+ 140:	f0 e0       	ldi	r31, 0x00	; 0
+ 142:	80 81       	ld	r24, Z
+ 144:	86 60       	ori	r24, 0x06	; 6
+ 146:	80 83       	st	Z, r24
+
+	/* Enable UART receiver and transmitter */
+    UCSR1B |= (1<<TXEN0) | (1<<RXEN0 | (1 << RXCIE0));
+ 148:	e9 ec       	ldi	r30, 0xC9	; 201
+ 14a:	f0 e0       	ldi	r31, 0x00	; 0
+ 14c:	80 81       	ld	r24, Z
+ 14e:	88 69       	ori	r24, 0x98	; 152
+ 150:	80 83       	st	Z, r24
+		
+	CanDriver t_CAN;
+	
+	Uart0 serial0(115200);
+	Uart1 serial1(115200);
+	t_CAN.CanInit(CAN_125K);
+ 152:	62 e0       	ldi	r22, 0x02	; 2
+ 154:	ce 01       	movw	r24, r28
+ 156:	cd 96       	adiw	r24, 0x3d	; 61
+ 158:	57 d0       	rcall	.+174    	; 0x208 <_ZN9CanDriver7CanInitEh>
+	
+	//t_CAN.IOControl(0,RX_DATA,0x00000200,0x0000020F);
+	//t_CAN.IOControl(1,RX_DATA,0x00001200,0x0000120F);
+	t_CAN.IOControl(7,TX_DATA,0x00002200,0x0000220F);
+ 15a:	0f 2e       	mov	r0, r31
+ 15c:	ff e0       	ldi	r31, 0x0F	; 15
+ 15e:	cf 2e       	mov	r12, r31
+ 160:	f2 e2       	ldi	r31, 0x22	; 34
+ 162:	df 2e       	mov	r13, r31
+ 164:	e1 2c       	mov	r14, r1
+ 166:	f1 2c       	mov	r15, r1
+ 168:	f0 2d       	mov	r31, r0
+ 16a:	00 e0       	ldi	r16, 0x00	; 0
+ 16c:	12 e2       	ldi	r17, 0x22	; 34
+ 16e:	20 e0       	ldi	r18, 0x00	; 0
+ 170:	30 e0       	ldi	r19, 0x00	; 0
+ 172:	41 e0       	ldi	r20, 0x01	; 1
+ 174:	67 e0       	ldi	r22, 0x07	; 7
+ 176:	ce 01       	movw	r24, r28
+ 178:	cd 96       	adiw	r24, 0x3d	; 61
+ 17a:	d8 d0       	rcall	.+432    	; 0x32c <_ZN9CanDriver9IOControlEhhmm>
+	
+	serial1.write(0x65);
+ 17c:	65 e6       	ldi	r22, 0x65	; 101
+ 17e:	ce 01       	movw	r24, r28
+ 180:	01 96       	adiw	r24, 0x01	; 1
+ 182:	20 d3       	rcall	.+1600   	; 0x7c4 <_ZN5Uart15writeEh>
+	serial0.write(0x64);
+ 184:	64 e6       	ldi	r22, 0x64	; 100
+ 186:	ce 01       	movw	r24, r28
+ 188:	48 96       	adiw	r24, 0x18	; 24
+ 18a:	68 d2       	rcall	.+1232   	; 0x65c <_ZN5Uart05writeEh>
+#include "driver/usart1.hpp"
+
+int main(void)
+{
+	CanPacket MOb;
+	uint8_t counter = 0;
+ 18c:	10 e0       	ldi	r17, 0x00	; 0
+	serial1.write(0x65);
+	serial0.write(0x64);
+    while(1)
+    {
+		
+		MOb.address=0x000000AA1;
+ 18e:	0f 2e       	mov	r0, r31
+ 190:	f1 ea       	ldi	r31, 0xA1	; 161
+ 192:	cf 2e       	mov	r12, r31
+ 194:	fa e0       	ldi	r31, 0x0A	; 10
+ 196:	df 2e       	mov	r13, r31
+ 198:	e1 2c       	mov	r14, r1
+ 19a:	f1 2c       	mov	r15, r1
+ 19c:	f0 2d       	mov	r31, r0
+		MOb.MObID = 7;
+ 19e:	07 e0       	ldi	r16, 0x07	; 7
+		MOb.length = 8;
+ 1a0:	68 94       	set
+ 1a2:	66 24       	eor	r6, r6
+ 1a4:	63 f8       	bld	r6, 3
+		MOb.data[0]= 0x00;
+		MOb.data[1]= 0x02;
+ 1a6:	68 94       	set
+ 1a8:	77 24       	eor	r7, r7
+ 1aa:	71 f8       	bld	r7, 1
+		MOb.data[2]= 0x03;
+ 1ac:	0f 2e       	mov	r0, r31
+ 1ae:	f3 e0       	ldi	r31, 0x03	; 3
+ 1b0:	8f 2e       	mov	r8, r31
+ 1b2:	f0 2d       	mov	r31, r0
+		MOb.data[3]= 0x04;
+ 1b4:	68 94       	set
+ 1b6:	99 24       	eor	r9, r9
+ 1b8:	92 f8       	bld	r9, 2
+		MOb.data[4]= 0x05;
+ 1ba:	0f 2e       	mov	r0, r31
+ 1bc:	f5 e0       	ldi	r31, 0x05	; 5
+ 1be:	af 2e       	mov	r10, r31
+ 1c0:	f0 2d       	mov	r31, r0
+		MOb.data[5]= 0x06;
+ 1c2:	0f 2e       	mov	r0, r31
+ 1c4:	f6 e0       	ldi	r31, 0x06	; 6
+ 1c6:	bf 2e       	mov	r11, r31
+ 1c8:	f0 2d       	mov	r31, r0
+	serial1.write(0x65);
+	serial0.write(0x64);
+    while(1)
+    {
+		
+		MOb.address=0x000000AA1;
+ 1ca:	cf a6       	std	Y+47, r12	; 0x2f
+ 1cc:	d8 aa       	std	Y+48, r13	; 0x30
+ 1ce:	e9 aa       	std	Y+49, r14	; 0x31
+ 1d0:	fa aa       	std	Y+50, r15	; 0x32
+		MOb.MObID = 7;
+ 1d2:	0b ab       	std	Y+51, r16	; 0x33
+		MOb.length = 8;
+ 1d4:	6c aa       	std	Y+52, r6	; 0x34
+		MOb.data[0]= 0x00;
+ 1d6:	1d aa       	std	Y+53, r1	; 0x35
+		MOb.data[1]= 0x02;
+ 1d8:	7e aa       	std	Y+54, r7	; 0x36
+		MOb.data[2]= 0x03;
+ 1da:	8f aa       	std	Y+55, r8	; 0x37
+		MOb.data[3]= 0x04;
+ 1dc:	98 ae       	std	Y+56, r9	; 0x38
+		MOb.data[4]= 0x05;
+ 1de:	a9 ae       	std	Y+57, r10	; 0x39
+		MOb.data[5]= 0x06;
+ 1e0:	ba ae       	std	Y+58, r11	; 0x3a
+		MOb.data[6]= 0x07;
+ 1e2:	0b af       	std	Y+59, r16	; 0x3b
+		MOb.data[7]= counter;
+ 1e4:	1c af       	std	Y+60, r17	; 0x3c
+		counter++;
+ 1e6:	1f 5f       	subi	r17, 0xFF	; 255
+		
+		t_CAN.Send(&MOb);
+ 1e8:	be 01       	movw	r22, r28
+ 1ea:	61 5d       	subi	r22, 0xD1	; 209
+ 1ec:	7f 4f       	sbci	r23, 0xFF	; 255
+ 1ee:	ce 01       	movw	r24, r28
+ 1f0:	cd 96       	adiw	r24, 0x3d	; 61
+ 1f2:	be d1       	rcall	.+892    	; 0x570 <_ZN9CanDriver4SendEP9CanPacket>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1f4:	2f ef       	ldi	r18, 0xFF	; 255
+ 1f6:	89 e6       	ldi	r24, 0x69	; 105
+ 1f8:	98 e1       	ldi	r25, 0x18	; 24
+ 1fa:	21 50       	subi	r18, 0x01	; 1
+ 1fc:	80 40       	sbci	r24, 0x00	; 0
+ 1fe:	90 40       	sbci	r25, 0x00	; 0
+ 200:	e1 f7       	brne	.-8      	; 0x1fa <main+0x122>
+ 202:	00 c0       	rjmp	.+0      	; 0x204 <main+0x12c>
+ 204:	00 00       	nop
+ 206:	e1 cf       	rjmp	.-62     	; 0x1ca <main+0xf2>
+
+00000208 <_ZN9CanDriver7CanInitEh>:
+			}	
+		}
+	CANPAGE = savepage;
+	
+	
+}
+ 208:	4f 92       	push	r4
+ 20a:	5f 92       	push	r5
+ 20c:	6f 92       	push	r6
+ 20e:	7f 92       	push	r7
+ 210:	8f 92       	push	r8
+ 212:	9f 92       	push	r9
+ 214:	af 92       	push	r10
+ 216:	bf 92       	push	r11
+ 218:	cf 92       	push	r12
+ 21a:	df 92       	push	r13
+ 21c:	ef 92       	push	r14
+ 21e:	ff 92       	push	r15
+ 220:	0f 93       	push	r16
+ 222:	1f 93       	push	r17
+ 224:	cf 93       	push	r28
+ 226:	df 93       	push	r29
+ 228:	2c 01       	movw	r4, r24
+ 22a:	81 e0       	ldi	r24, 0x01	; 1
+ 22c:	80 93 d8 00 	sts	0x00D8, r24
+ 230:	10 92 da 00 	sts	0x00DA, r1
+ 234:	10 92 db 00 	sts	0x00DB, r1
+ 238:	10 92 df 00 	sts	0x00DF, r1
+ 23c:	10 92 de 00 	sts	0x00DE, r1
+ 240:	e2 01       	movw	r28, r4
+ 242:	88 81       	ld	r24, Y
+ 244:	88 23       	and	r24, r24
+ 246:	09 f4       	brne	.+2      	; 0x24a <_ZN9CanDriver7CanInitEh+0x42>
+ 248:	4a c0       	rjmp	.+148    	; 0x2de <_ZN9CanDriver7CanInitEh+0xd6>
+ 24a:	71 2c       	mov	r7, r1
+ 24c:	0f 2e       	mov	r0, r31
+ 24e:	fd ee       	ldi	r31, 0xED	; 237
+ 250:	cf 2e       	mov	r12, r31
+ 252:	d1 2c       	mov	r13, r1
+ 254:	f0 2d       	mov	r31, r0
+ 256:	ef ee       	ldi	r30, 0xEF	; 239
+ 258:	f0 e0       	ldi	r31, 0x00	; 0
+ 25a:	ae ee       	ldi	r26, 0xEE	; 238
+ 25c:	b0 e0       	ldi	r27, 0x00	; 0
+ 25e:	0f 2e       	mov	r0, r31
+ 260:	f3 ef       	ldi	r31, 0xF3	; 243
+ 262:	ef 2e       	mov	r14, r31
+ 264:	f1 2c       	mov	r15, r1
+ 266:	f0 2d       	mov	r31, r0
+ 268:	02 ef       	ldi	r16, 0xF2	; 242
+ 26a:	10 e0       	ldi	r17, 0x00	; 0
+ 26c:	61 ef       	ldi	r22, 0xF1	; 241
+ 26e:	70 e0       	ldi	r23, 0x00	; 0
+ 270:	40 ef       	ldi	r20, 0xF0	; 240
+ 272:	50 e0       	ldi	r21, 0x00	; 0
+ 274:	27 ef       	ldi	r18, 0xF7	; 247
+ 276:	30 e0       	ldi	r19, 0x00	; 0
+ 278:	86 ef       	ldi	r24, 0xF6	; 246
+ 27a:	90 e0       	ldi	r25, 0x00	; 0
+ 27c:	0f 2e       	mov	r0, r31
+ 27e:	f5 ef       	ldi	r31, 0xF5	; 245
+ 280:	af 2e       	mov	r10, r31
+ 282:	b1 2c       	mov	r11, r1
+ 284:	f0 2d       	mov	r31, r0
+ 286:	0f 2e       	mov	r0, r31
+ 288:	f4 ef       	ldi	r31, 0xF4	; 244
+ 28a:	8f 2e       	mov	r8, r31
+ 28c:	91 2c       	mov	r9, r1
+ 28e:	f0 2d       	mov	r31, r0
+ 290:	67 2c       	mov	r6, r7
+ 292:	66 0c       	add	r6, r6
+ 294:	66 0c       	add	r6, r6
+ 296:	66 0c       	add	r6, r6
+ 298:	66 0c       	add	r6, r6
+ 29a:	e6 01       	movw	r28, r12
+ 29c:	68 82       	st	Y, r6
+ 29e:	10 82       	st	Z, r1
+ 2a0:	6c 90       	ld	r6, X
+ 2a2:	1c 92       	st	X, r1
+ 2a4:	60 80       	ld	r6, Z
+ 2a6:	df e7       	ldi	r29, 0x7F	; 127
+ 2a8:	6d 22       	and	r6, r29
+ 2aa:	60 82       	st	Z, r6
+ 2ac:	60 80       	ld	r6, Z
+ 2ae:	cf eb       	ldi	r28, 0xBF	; 191
+ 2b0:	6c 22       	and	r6, r28
+ 2b2:	60 82       	st	Z, r6
+ 2b4:	e7 01       	movw	r28, r14
+ 2b6:	18 82       	st	Y, r1
+ 2b8:	e8 01       	movw	r28, r16
+ 2ba:	18 82       	st	Y, r1
+ 2bc:	eb 01       	movw	r28, r22
+ 2be:	18 82       	st	Y, r1
+ 2c0:	ea 01       	movw	r28, r20
+ 2c2:	18 82       	st	Y, r1
+ 2c4:	e9 01       	movw	r28, r18
+ 2c6:	18 82       	st	Y, r1
+ 2c8:	ec 01       	movw	r28, r24
+ 2ca:	18 82       	st	Y, r1
+ 2cc:	e5 01       	movw	r28, r10
+ 2ce:	18 82       	st	Y, r1
+ 2d0:	e4 01       	movw	r28, r8
+ 2d2:	18 82       	st	Y, r1
+ 2d4:	73 94       	inc	r7
+ 2d6:	e2 01       	movw	r28, r4
+ 2d8:	68 80       	ld	r6, Y
+ 2da:	76 14       	cp	r7, r6
+ 2dc:	c8 f2       	brcs	.-78     	; 0x290 <_ZN9CanDriver7CanInitEh+0x88>
+ 2de:	eb ed       	ldi	r30, 0xDB	; 219
+ 2e0:	f0 e0       	ldi	r31, 0x00	; 0
+ 2e2:	80 81       	ld	r24, Z
+ 2e4:	80 62       	ori	r24, 0x20	; 32
+ 2e6:	80 83       	st	Z, r24
+ 2e8:	80 81       	ld	r24, Z
+ 2ea:	80 61       	ori	r24, 0x10	; 16
+ 2ec:	80 83       	st	Z, r24
+ 2ee:	80 81       	ld	r24, Z
+ 2f0:	80 68       	ori	r24, 0x80	; 128
+ 2f2:	80 83       	st	Z, r24
+ 2f4:	e8 ed       	ldi	r30, 0xD8	; 216
+ 2f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 2f8:	80 81       	ld	r24, Z
+ 2fa:	82 60       	ori	r24, 0x02	; 2
+ 2fc:	80 83       	st	Z, r24
+ 2fe:	e9 ed       	ldi	r30, 0xD9	; 217
+ 300:	f0 e0       	ldi	r31, 0x00	; 0
+ 302:	80 81       	ld	r24, Z
+ 304:	82 ff       	sbrs	r24, 2
+ 306:	fd cf       	rjmp	.-6      	; 0x302 <_ZN9CanDriver7CanInitEh+0xfa>
+ 308:	81 e0       	ldi	r24, 0x01	; 1
+ 30a:	df 91       	pop	r29
+ 30c:	cf 91       	pop	r28
+ 30e:	1f 91       	pop	r17
+ 310:	0f 91       	pop	r16
+ 312:	ff 90       	pop	r15
+ 314:	ef 90       	pop	r14
+ 316:	df 90       	pop	r13
+ 318:	cf 90       	pop	r12
+ 31a:	bf 90       	pop	r11
+ 31c:	af 90       	pop	r10
+ 31e:	9f 90       	pop	r9
+ 320:	8f 90       	pop	r8
+ 322:	7f 90       	pop	r7
+ 324:	6f 90       	pop	r6
+ 326:	5f 90       	pop	r5
+ 328:	4f 90       	pop	r4
+ 32a:	08 95       	ret
+
+0000032c <_ZN9CanDriver9IOControlEhhmm>:
+ 32c:	cf 92       	push	r12
+ 32e:	df 92       	push	r13
+ 330:	ef 92       	push	r14
+ 332:	ff 92       	push	r15
+ 334:	0f 93       	push	r16
+ 336:	1f 93       	push	r17
+ 338:	cf 93       	push	r28
+ 33a:	df 93       	push	r29
+ 33c:	cd b7       	in	r28, 0x3d	; 61
+ 33e:	de b7       	in	r29, 0x3e	; 62
+ 340:	28 97       	sbiw	r28, 0x08	; 8
+ 342:	0f b6       	in	r0, 0x3f	; 63
+ 344:	f8 94       	cli
+ 346:	de bf       	out	0x3e, r29	; 62
+ 348:	0f be       	out	0x3f, r0	; 63
+ 34a:	cd bf       	out	0x3d, r28	; 61
+ 34c:	fc 01       	movw	r30, r24
+ 34e:	80 81       	ld	r24, Z
+ 350:	86 17       	cp	r24, r22
+ 352:	08 f4       	brcc	.+2      	; 0x356 <_ZN9CanDriver9IOControlEhhmm+0x2a>
+ 354:	fb c0       	rjmp	.+502    	; 0x54c <_ZN9CanDriver9IOControlEhhmm+0x220>
+ 356:	ed ee       	ldi	r30, 0xED	; 237
+ 358:	f0 e0       	ldi	r31, 0x00	; 0
+ 35a:	80 81       	ld	r24, Z
+ 35c:	96 2f       	mov	r25, r22
+ 35e:	92 95       	swap	r25
+ 360:	90 7f       	andi	r25, 0xF0	; 240
+ 362:	90 83       	st	Z, r25
+ 364:	c0 1a       	sub	r12, r16
+ 366:	d1 0a       	sbc	r13, r17
+ 368:	e2 0a       	sbc	r14, r18
+ 36a:	f3 0a       	sbc	r15, r19
+ 36c:	c0 94       	com	r12
+ 36e:	d0 94       	com	r13
+ 370:	e0 94       	com	r14
+ 372:	f0 94       	com	r15
+ 374:	cd 82       	std	Y+5, r12	; 0x05
+ 376:	de 82       	std	Y+6, r13	; 0x06
+ 378:	ef 82       	std	Y+7, r14	; 0x07
+ 37a:	f8 86       	std	Y+8, r15	; 0x08
+ 37c:	5f 81       	ldd	r21, Y+7	; 0x07
+ 37e:	52 95       	swap	r21
+ 380:	56 95       	lsr	r21
+ 382:	57 70       	andi	r21, 0x07	; 7
+ 384:	98 85       	ldd	r25, Y+8	; 0x08
+ 386:	99 0f       	add	r25, r25
+ 388:	99 0f       	add	r25, r25
+ 38a:	99 0f       	add	r25, r25
+ 38c:	95 0f       	add	r25, r21
+ 38e:	90 93 f7 00 	sts	0x00F7, r25
+ 392:	5e 81       	ldd	r21, Y+6	; 0x06
+ 394:	52 95       	swap	r21
+ 396:	56 95       	lsr	r21
+ 398:	57 70       	andi	r21, 0x07	; 7
+ 39a:	9f 81       	ldd	r25, Y+7	; 0x07
+ 39c:	99 0f       	add	r25, r25
+ 39e:	99 0f       	add	r25, r25
+ 3a0:	99 0f       	add	r25, r25
+ 3a2:	95 0f       	add	r25, r21
+ 3a4:	90 93 f6 00 	sts	0x00F6, r25
+ 3a8:	5d 81       	ldd	r21, Y+5	; 0x05
+ 3aa:	52 95       	swap	r21
+ 3ac:	56 95       	lsr	r21
+ 3ae:	57 70       	andi	r21, 0x07	; 7
+ 3b0:	9e 81       	ldd	r25, Y+6	; 0x06
+ 3b2:	99 0f       	add	r25, r25
+ 3b4:	99 0f       	add	r25, r25
+ 3b6:	99 0f       	add	r25, r25
+ 3b8:	95 0f       	add	r25, r21
+ 3ba:	90 93 f5 00 	sts	0x00F5, r25
+ 3be:	9d 81       	ldd	r25, Y+5	; 0x05
+ 3c0:	99 0f       	add	r25, r25
+ 3c2:	99 0f       	add	r25, r25
+ 3c4:	99 0f       	add	r25, r25
+ 3c6:	e4 ef       	ldi	r30, 0xF4	; 244
+ 3c8:	f0 e0       	ldi	r31, 0x00	; 0
+ 3ca:	90 83       	st	Z, r25
+ 3cc:	91 e0       	ldi	r25, 0x01	; 1
+ 3ce:	90 83       	st	Z, r25
+ 3d0:	0c 21       	and	r16, r12
+ 3d2:	1d 21       	and	r17, r13
+ 3d4:	2e 21       	and	r18, r14
+ 3d6:	3f 21       	and	r19, r15
+ 3d8:	09 83       	std	Y+1, r16	; 0x01
+ 3da:	1a 83       	std	Y+2, r17	; 0x02
+ 3dc:	2b 83       	std	Y+3, r18	; 0x03
+ 3de:	3c 83       	std	Y+4, r19	; 0x04
+ 3e0:	2b 81       	ldd	r18, Y+3	; 0x03
+ 3e2:	22 95       	swap	r18
+ 3e4:	26 95       	lsr	r18
+ 3e6:	27 70       	andi	r18, 0x07	; 7
+ 3e8:	9c 81       	ldd	r25, Y+4	; 0x04
+ 3ea:	99 0f       	add	r25, r25
+ 3ec:	99 0f       	add	r25, r25
+ 3ee:	99 0f       	add	r25, r25
+ 3f0:	92 0f       	add	r25, r18
+ 3f2:	90 93 f3 00 	sts	0x00F3, r25
+ 3f6:	2a 81       	ldd	r18, Y+2	; 0x02
+ 3f8:	22 95       	swap	r18
+ 3fa:	26 95       	lsr	r18
+ 3fc:	27 70       	andi	r18, 0x07	; 7
+ 3fe:	9b 81       	ldd	r25, Y+3	; 0x03
+ 400:	99 0f       	add	r25, r25
+ 402:	99 0f       	add	r25, r25
+ 404:	99 0f       	add	r25, r25
+ 406:	92 0f       	add	r25, r18
+ 408:	90 93 f2 00 	sts	0x00F2, r25
+ 40c:	29 81       	ldd	r18, Y+1	; 0x01
+ 40e:	22 95       	swap	r18
+ 410:	26 95       	lsr	r18
+ 412:	27 70       	andi	r18, 0x07	; 7
+ 414:	9a 81       	ldd	r25, Y+2	; 0x02
+ 416:	99 0f       	add	r25, r25
+ 418:	99 0f       	add	r25, r25
+ 41a:	99 0f       	add	r25, r25
+ 41c:	92 0f       	add	r25, r18
+ 41e:	90 93 f1 00 	sts	0x00F1, r25
+ 422:	99 81       	ldd	r25, Y+1	; 0x01
+ 424:	99 0f       	add	r25, r25
+ 426:	99 0f       	add	r25, r25
+ 428:	99 0f       	add	r25, r25
+ 42a:	90 93 f0 00 	sts	0x00F0, r25
+ 42e:	ef ee       	ldi	r30, 0xEF	; 239
+ 430:	f0 e0       	ldi	r31, 0x00	; 0
+ 432:	90 81       	ld	r25, Z
+ 434:	90 61       	ori	r25, 0x10	; 16
+ 436:	90 83       	st	Z, r25
+ 438:	41 30       	cpi	r20, 0x01	; 1
+ 43a:	81 f1       	breq	.+96     	; 0x49c <_ZN9CanDriver9IOControlEhhmm+0x170>
+ 43c:	20 f0       	brcs	.+8      	; 0x446 <_ZN9CanDriver9IOControlEhhmm+0x11a>
+ 43e:	42 30       	cpi	r20, 0x02	; 2
+ 440:	09 f0       	breq	.+2      	; 0x444 <_ZN9CanDriver9IOControlEhhmm+0x118>
+ 442:	86 c0       	rjmp	.+268    	; 0x550 <_ZN9CanDriver9IOControlEhhmm+0x224>
+ 444:	55 c0       	rjmp	.+170    	; 0x4f0 <_ZN9CanDriver9IOControlEhhmm+0x1c4>
+ 446:	68 30       	cpi	r22, 0x08	; 8
+ 448:	80 f4       	brcc	.+32     	; 0x46a <_ZN9CanDriver9IOControlEhhmm+0x13e>
+ 44a:	ee ed       	ldi	r30, 0xDE	; 222
+ 44c:	f0 e0       	ldi	r31, 0x00	; 0
+ 44e:	90 81       	ld	r25, Z
+ 450:	21 e0       	ldi	r18, 0x01	; 1
+ 452:	30 e0       	ldi	r19, 0x00	; 0
+ 454:	a9 01       	movw	r20, r18
+ 456:	02 c0       	rjmp	.+4      	; 0x45c <_ZN9CanDriver9IOControlEhhmm+0x130>
+ 458:	44 0f       	add	r20, r20
+ 45a:	55 1f       	adc	r21, r21
+ 45c:	6a 95       	dec	r22
+ 45e:	e2 f7       	brpl	.-8      	; 0x458 <_ZN9CanDriver9IOControlEhhmm+0x12c>
+ 460:	ba 01       	movw	r22, r20
+ 462:	60 95       	com	r22
+ 464:	69 23       	and	r22, r25
+ 466:	60 83       	st	Z, r22
+ 468:	10 c0       	rjmp	.+32     	; 0x48a <_ZN9CanDriver9IOControlEhhmm+0x15e>
+ 46a:	ef ed       	ldi	r30, 0xDF	; 223
+ 46c:	f0 e0       	ldi	r31, 0x00	; 0
+ 46e:	90 81       	ld	r25, Z
+ 470:	70 e0       	ldi	r23, 0x00	; 0
+ 472:	68 50       	subi	r22, 0x08	; 8
+ 474:	71 09       	sbc	r23, r1
+ 476:	21 e0       	ldi	r18, 0x01	; 1
+ 478:	30 e0       	ldi	r19, 0x00	; 0
+ 47a:	02 c0       	rjmp	.+4      	; 0x480 <_ZN9CanDriver9IOControlEhhmm+0x154>
+ 47c:	22 0f       	add	r18, r18
+ 47e:	33 1f       	adc	r19, r19
+ 480:	6a 95       	dec	r22
+ 482:	e2 f7       	brpl	.-8      	; 0x47c <_ZN9CanDriver9IOControlEhhmm+0x150>
+ 484:	20 95       	com	r18
+ 486:	29 23       	and	r18, r25
+ 488:	20 83       	st	Z, r18
+ 48a:	ef ee       	ldi	r30, 0xEF	; 239
+ 48c:	f0 e0       	ldi	r31, 0x00	; 0
+ 48e:	90 81       	ld	r25, Z
+ 490:	9f 77       	andi	r25, 0x7F	; 127
+ 492:	90 83       	st	Z, r25
+ 494:	90 81       	ld	r25, Z
+ 496:	9f 7b       	andi	r25, 0xBF	; 191
+ 498:	90 83       	st	Z, r25
+ 49a:	53 c0       	rjmp	.+166    	; 0x542 <_ZN9CanDriver9IOControlEhhmm+0x216>
+ 49c:	68 30       	cpi	r22, 0x08	; 8
+ 49e:	78 f4       	brcc	.+30     	; 0x4be <_ZN9CanDriver9IOControlEhhmm+0x192>
+ 4a0:	ee ed       	ldi	r30, 0xDE	; 222
+ 4a2:	f0 e0       	ldi	r31, 0x00	; 0
+ 4a4:	90 81       	ld	r25, Z
+ 4a6:	21 e0       	ldi	r18, 0x01	; 1
+ 4a8:	30 e0       	ldi	r19, 0x00	; 0
+ 4aa:	a9 01       	movw	r20, r18
+ 4ac:	02 c0       	rjmp	.+4      	; 0x4b2 <_ZN9CanDriver9IOControlEhhmm+0x186>
+ 4ae:	44 0f       	add	r20, r20
+ 4b0:	55 1f       	adc	r21, r21
+ 4b2:	6a 95       	dec	r22
+ 4b4:	e2 f7       	brpl	.-8      	; 0x4ae <_ZN9CanDriver9IOControlEhhmm+0x182>
+ 4b6:	ba 01       	movw	r22, r20
+ 4b8:	69 2b       	or	r22, r25
+ 4ba:	60 83       	st	Z, r22
+ 4bc:	10 c0       	rjmp	.+32     	; 0x4de <_ZN9CanDriver9IOControlEhhmm+0x1b2>
+ 4be:	ef ed       	ldi	r30, 0xDF	; 223
+ 4c0:	f0 e0       	ldi	r31, 0x00	; 0
+ 4c2:	90 81       	ld	r25, Z
+ 4c4:	70 e0       	ldi	r23, 0x00	; 0
+ 4c6:	68 50       	subi	r22, 0x08	; 8
+ 4c8:	71 09       	sbc	r23, r1
+ 4ca:	41 e0       	ldi	r20, 0x01	; 1
+ 4cc:	50 e0       	ldi	r21, 0x00	; 0
+ 4ce:	9a 01       	movw	r18, r20
+ 4d0:	02 c0       	rjmp	.+4      	; 0x4d6 <_ZN9CanDriver9IOControlEhhmm+0x1aa>
+ 4d2:	22 0f       	add	r18, r18
+ 4d4:	33 1f       	adc	r19, r19
+ 4d6:	6a 95       	dec	r22
+ 4d8:	e2 f7       	brpl	.-8      	; 0x4d2 <_ZN9CanDriver9IOControlEhhmm+0x1a6>
+ 4da:	29 2b       	or	r18, r25
+ 4dc:	20 83       	st	Z, r18
+ 4de:	ef ee       	ldi	r30, 0xEF	; 239
+ 4e0:	f0 e0       	ldi	r31, 0x00	; 0
+ 4e2:	90 81       	ld	r25, Z
+ 4e4:	9f 77       	andi	r25, 0x7F	; 127
+ 4e6:	90 83       	st	Z, r25
+ 4e8:	90 81       	ld	r25, Z
+ 4ea:	90 64       	ori	r25, 0x40	; 64
+ 4ec:	90 83       	st	Z, r25
+ 4ee:	29 c0       	rjmp	.+82     	; 0x542 <_ZN9CanDriver9IOControlEhhmm+0x216>
+ 4f0:	68 30       	cpi	r22, 0x08	; 8
+ 4f2:	78 f4       	brcc	.+30     	; 0x512 <_ZN9CanDriver9IOControlEhhmm+0x1e6>
+ 4f4:	ee ed       	ldi	r30, 0xDE	; 222
+ 4f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 4f8:	90 81       	ld	r25, Z
+ 4fa:	21 e0       	ldi	r18, 0x01	; 1
+ 4fc:	30 e0       	ldi	r19, 0x00	; 0
+ 4fe:	a9 01       	movw	r20, r18
+ 500:	02 c0       	rjmp	.+4      	; 0x506 <_ZN9CanDriver9IOControlEhhmm+0x1da>
+ 502:	44 0f       	add	r20, r20
+ 504:	55 1f       	adc	r21, r21
+ 506:	6a 95       	dec	r22
+ 508:	e2 f7       	brpl	.-8      	; 0x502 <_ZN9CanDriver9IOControlEhhmm+0x1d6>
+ 50a:	ba 01       	movw	r22, r20
+ 50c:	69 2b       	or	r22, r25
+ 50e:	60 83       	st	Z, r22
+ 510:	10 c0       	rjmp	.+32     	; 0x532 <_ZN9CanDriver9IOControlEhhmm+0x206>
+ 512:	ef ed       	ldi	r30, 0xDF	; 223
+ 514:	f0 e0       	ldi	r31, 0x00	; 0
+ 516:	90 81       	ld	r25, Z
+ 518:	70 e0       	ldi	r23, 0x00	; 0
+ 51a:	68 50       	subi	r22, 0x08	; 8
+ 51c:	71 09       	sbc	r23, r1
+ 51e:	41 e0       	ldi	r20, 0x01	; 1
+ 520:	50 e0       	ldi	r21, 0x00	; 0
+ 522:	9a 01       	movw	r18, r20
+ 524:	02 c0       	rjmp	.+4      	; 0x52a <_ZN9CanDriver9IOControlEhhmm+0x1fe>
+ 526:	22 0f       	add	r18, r18
+ 528:	33 1f       	adc	r19, r19
+ 52a:	6a 95       	dec	r22
+ 52c:	e2 f7       	brpl	.-8      	; 0x526 <_ZN9CanDriver9IOControlEhhmm+0x1fa>
+ 52e:	29 2b       	or	r18, r25
+ 530:	20 83       	st	Z, r18
+ 532:	ef ee       	ldi	r30, 0xEF	; 239
+ 534:	f0 e0       	ldi	r31, 0x00	; 0
+ 536:	90 81       	ld	r25, Z
+ 538:	90 68       	ori	r25, 0x80	; 128
+ 53a:	90 83       	st	Z, r25
+ 53c:	90 81       	ld	r25, Z
+ 53e:	9f 7b       	andi	r25, 0xBF	; 191
+ 540:	90 83       	st	Z, r25
+ 542:	80 7f       	andi	r24, 0xF0	; 240
+ 544:	80 93 ed 00 	sts	0x00ED, r24
+ 548:	81 e0       	ldi	r24, 0x01	; 1
+ 54a:	03 c0       	rjmp	.+6      	; 0x552 <_ZN9CanDriver9IOControlEhhmm+0x226>
+ 54c:	80 e0       	ldi	r24, 0x00	; 0
+ 54e:	01 c0       	rjmp	.+2      	; 0x552 <_ZN9CanDriver9IOControlEhhmm+0x226>
+ 550:	80 e0       	ldi	r24, 0x00	; 0
+ 552:	28 96       	adiw	r28, 0x08	; 8
+ 554:	0f b6       	in	r0, 0x3f	; 63
+ 556:	f8 94       	cli
+ 558:	de bf       	out	0x3e, r29	; 62
+ 55a:	0f be       	out	0x3f, r0	; 63
+ 55c:	cd bf       	out	0x3d, r28	; 61
+ 55e:	df 91       	pop	r29
+ 560:	cf 91       	pop	r28
+ 562:	1f 91       	pop	r17
+ 564:	0f 91       	pop	r16
+ 566:	ff 90       	pop	r15
+ 568:	ef 90       	pop	r14
+ 56a:	df 90       	pop	r13
+ 56c:	cf 90       	pop	r12
+ 56e:	08 95       	ret
+
+00000570 <_ZN9CanDriver4SendEP9CanPacket>:
+ 570:	cf 93       	push	r28
+ 572:	df 93       	push	r29
+ 574:	00 d0       	rcall	.+0      	; 0x576 <_ZN9CanDriver4SendEP9CanPacket+0x6>
+ 576:	00 d0       	rcall	.+0      	; 0x578 <_ZN9CanDriver4SendEP9CanPacket+0x8>
+ 578:	cd b7       	in	r28, 0x3d	; 61
+ 57a:	de b7       	in	r29, 0x3e	; 62
+ 57c:	fb 01       	movw	r30, r22
+ 57e:	ad ee       	ldi	r26, 0xED	; 237
+ 580:	b0 e0       	ldi	r27, 0x00	; 0
+ 582:	8c 91       	ld	r24, X
+ 584:	84 81       	ldd	r24, Z+4	; 0x04
+ 586:	82 95       	swap	r24
+ 588:	80 7f       	andi	r24, 0xF0	; 240
+ 58a:	8c 93       	st	X, r24
+ 58c:	85 81       	ldd	r24, Z+5	; 0x05
+ 58e:	2f ee       	ldi	r18, 0xEF	; 239
+ 590:	30 e0       	ldi	r19, 0x00	; 0
+ 592:	d9 01       	movw	r26, r18
+ 594:	8c 93       	st	X, r24
+ 596:	80 81       	ld	r24, Z
+ 598:	91 81       	ldd	r25, Z+1	; 0x01
+ 59a:	a2 81       	ldd	r26, Z+2	; 0x02
+ 59c:	b3 81       	ldd	r27, Z+3	; 0x03
+ 59e:	89 83       	std	Y+1, r24	; 0x01
+ 5a0:	9a 83       	std	Y+2, r25	; 0x02
+ 5a2:	ab 83       	std	Y+3, r26	; 0x03
+ 5a4:	bc 83       	std	Y+4, r27	; 0x04
+ 5a6:	9b 81       	ldd	r25, Y+3	; 0x03
+ 5a8:	92 95       	swap	r25
+ 5aa:	96 95       	lsr	r25
+ 5ac:	97 70       	andi	r25, 0x07	; 7
+ 5ae:	8c 81       	ldd	r24, Y+4	; 0x04
+ 5b0:	88 0f       	add	r24, r24
+ 5b2:	88 0f       	add	r24, r24
+ 5b4:	88 0f       	add	r24, r24
+ 5b6:	89 0f       	add	r24, r25
+ 5b8:	80 93 f3 00 	sts	0x00F3, r24
+ 5bc:	9a 81       	ldd	r25, Y+2	; 0x02
+ 5be:	92 95       	swap	r25
+ 5c0:	96 95       	lsr	r25
+ 5c2:	97 70       	andi	r25, 0x07	; 7
+ 5c4:	8b 81       	ldd	r24, Y+3	; 0x03
+ 5c6:	88 0f       	add	r24, r24
+ 5c8:	88 0f       	add	r24, r24
+ 5ca:	88 0f       	add	r24, r24
+ 5cc:	89 0f       	add	r24, r25
+ 5ce:	80 93 f2 00 	sts	0x00F2, r24
+ 5d2:	99 81       	ldd	r25, Y+1	; 0x01
+ 5d4:	92 95       	swap	r25
+ 5d6:	96 95       	lsr	r25
+ 5d8:	97 70       	andi	r25, 0x07	; 7
+ 5da:	8a 81       	ldd	r24, Y+2	; 0x02
+ 5dc:	88 0f       	add	r24, r24
+ 5de:	88 0f       	add	r24, r24
+ 5e0:	88 0f       	add	r24, r24
+ 5e2:	89 0f       	add	r24, r25
+ 5e4:	80 93 f1 00 	sts	0x00F1, r24
+ 5e8:	89 81       	ldd	r24, Y+1	; 0x01
+ 5ea:	88 0f       	add	r24, r24
+ 5ec:	88 0f       	add	r24, r24
+ 5ee:	88 0f       	add	r24, r24
+ 5f0:	80 93 f0 00 	sts	0x00F0, r24
+ 5f4:	d9 01       	movw	r26, r18
+ 5f6:	8c 91       	ld	r24, X
+ 5f8:	80 61       	ori	r24, 0x10	; 16
+ 5fa:	8c 93       	st	X, r24
+ 5fc:	85 81       	ldd	r24, Z+5	; 0x05
+ 5fe:	88 23       	and	r24, r24
+ 600:	71 f0       	breq	.+28     	; 0x61e <_ZN9CanDriver4SendEP9CanPacket+0xae>
+ 602:	20 e0       	ldi	r18, 0x00	; 0
+ 604:	8a ef       	ldi	r24, 0xFA	; 250
+ 606:	90 e0       	ldi	r25, 0x00	; 0
+ 608:	df 01       	movw	r26, r30
+ 60a:	a2 0f       	add	r26, r18
+ 60c:	b1 1d       	adc	r27, r1
+ 60e:	16 96       	adiw	r26, 0x06	; 6
+ 610:	3c 91       	ld	r19, X
+ 612:	dc 01       	movw	r26, r24
+ 614:	3c 93       	st	X, r19
+ 616:	2f 5f       	subi	r18, 0xFF	; 255
+ 618:	35 81       	ldd	r19, Z+5	; 0x05
+ 61a:	23 17       	cp	r18, r19
+ 61c:	a8 f3       	brcs	.-22     	; 0x608 <_ZN9CanDriver4SendEP9CanPacket+0x98>
+ 61e:	ef ee       	ldi	r30, 0xEF	; 239
+ 620:	f0 e0       	ldi	r31, 0x00	; 0
+ 622:	80 81       	ld	r24, Z
+ 624:	8f 77       	andi	r24, 0x7F	; 127
+ 626:	80 83       	st	Z, r24
+ 628:	80 81       	ld	r24, Z
+ 62a:	80 64       	ori	r24, 0x40	; 64
+ 62c:	80 83       	st	Z, r24
+ 62e:	80 91 ee 00 	lds	r24, 0x00EE
+ 632:	85 b1       	in	r24, 0x05	; 5
+ 634:	80 58       	subi	r24, 0x80	; 128
+ 636:	85 b9       	out	0x05, r24	; 5
+ 638:	80 e0       	ldi	r24, 0x00	; 0
+ 63a:	0f 90       	pop	r0
+ 63c:	0f 90       	pop	r0
+ 63e:	0f 90       	pop	r0
+ 640:	0f 90       	pop	r0
+ 642:	df 91       	pop	r29
+ 644:	cf 91       	pop	r28
+ 646:	08 95       	ret
+
+00000648 <__vector_18>:
+
+void CANIT_vect()
+{
+ 648:	1f 92       	push	r1
+ 64a:	0f 92       	push	r0
+ 64c:	0f b6       	in	r0, 0x3f	; 63
+ 64e:	0f 92       	push	r0
+ 650:	11 24       	eor	r1, r1
+	//t_CAN.IrqService();
+ 652:	0f 90       	pop	r0
+ 654:	0f be       	out	0x3f, r0	; 63
+ 656:	0f 90       	pop	r0
+ 658:	1f 90       	pop	r1
+ 65a:	18 95       	reti
+
+0000065c <_ZN5Uart05writeEh>:
+	}
+	return true;
+}
+
+bool Uart0::write(uint8_t c)
+{
+ 65c:	e6 2f       	mov	r30, r22
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+
+	bool isEmpty() {return (m_put == m_get);}
+	bool isFull(){
+		int temp = m_put;
+ 65e:	20 91 2e 01 	lds	r18, 0x012E
+ 662:	30 91 2f 01 	lds	r19, 0x012F
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 666:	c9 01       	movw	r24, r18
+ 668:	01 96       	adiw	r24, 0x01	; 1
+ 66a:	65 e1       	ldi	r22, 0x15	; 21
+ 66c:	70 e0       	ldi	r23, 0x00	; 0
+ 66e:	5e d1       	rcall	.+700    	; 0x92c <__divmodhi4>
+	if (!TxBuffer.isFull()){
+ 670:	40 91 30 01 	lds	r20, 0x0130
+ 674:	50 91 31 01 	lds	r21, 0x0131
+ 678:	84 17       	cp	r24, r20
+ 67a:	95 07       	cpc	r25, r21
+ 67c:	79 f0       	breq	.+30     	; 0x69c <_ZN5Uart05writeEh+0x40>
+	}
+
+	bool Put(const FifoType &Slot){
+		if (isFull())
+		return false;
+		m_Slots[m_put] = Slot;
+ 67e:	d9 01       	movw	r26, r18
+ 680:	a7 5e       	subi	r26, 0xE7	; 231
+ 682:	be 4f       	sbci	r27, 0xFE	; 254
+ 684:	ec 93       	st	X, r30
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 686:	90 93 2f 01 	sts	0x012F, r25
+ 68a:	80 93 2e 01 	sts	0x012E, r24
+		TxBuffer.Put(c);
+
+		UCSR0B |= (1 << UDRIE0);
+ 68e:	e1 ec       	ldi	r30, 0xC1	; 193
+ 690:	f0 e0       	ldi	r31, 0x00	; 0
+ 692:	80 81       	ld	r24, Z
+ 694:	80 62       	ori	r24, 0x20	; 32
+ 696:	80 83       	st	Z, r24
+
+	}else{
+		return false;
+	}
+return true;
+ 698:	81 e0       	ldi	r24, 0x01	; 1
+ 69a:	08 95       	ret
+		TxBuffer.Put(c);
+
+		UCSR0B |= (1 << UDRIE0);
+
+	}else{
+		return false;
+ 69c:	80 e0       	ldi	r24, 0x00	; 0
+	}
+return true;
+}
+ 69e:	08 95       	ret
+
+000006a0 <__vector_22>:
+
+
+ISR(USART0_UDRE_vect)
+{
+ 6a0:	1f 92       	push	r1
+ 6a2:	0f 92       	push	r0
+ 6a4:	0f b6       	in	r0, 0x3f	; 63
+ 6a6:	0f 92       	push	r0
+ 6a8:	11 24       	eor	r1, r1
+ 6aa:	0b b6       	in	r0, 0x3b	; 59
+ 6ac:	0f 92       	push	r0
+ 6ae:	2f 93       	push	r18
+ 6b0:	3f 93       	push	r19
+ 6b2:	5f 93       	push	r21
+ 6b4:	6f 93       	push	r22
+ 6b6:	7f 93       	push	r23
+ 6b8:	8f 93       	push	r24
+ 6ba:	9f 93       	push	r25
+ 6bc:	af 93       	push	r26
+ 6be:	bf 93       	push	r27
+ 6c0:	ef 93       	push	r30
+ 6c2:	ff 93       	push	r31
+	cli();
+ 6c4:	f8 94       	cli
+{
+	public:
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+
+	bool isEmpty() {return (m_put == m_get);}
+ 6c6:	80 91 30 01 	lds	r24, 0x0130
+ 6ca:	90 91 31 01 	lds	r25, 0x0131
+	uint8_t c;
+	if (!TxBuffer.isEmpty()){
+ 6ce:	20 91 2e 01 	lds	r18, 0x012E
+ 6d2:	30 91 2f 01 	lds	r19, 0x012F
+ 6d6:	28 17       	cp	r18, r24
+ 6d8:	39 07       	cpc	r19, r25
+ 6da:	79 f0       	breq	.+30     	; 0x6fa <__vector_22+0x5a>
+	}
+
+	bool Get(FifoType &Slot){
+		if (isEmpty())
+		return false;
+		Slot = m_Slots[m_get];
+ 6dc:	fc 01       	movw	r30, r24
+ 6de:	e7 5e       	subi	r30, 0xE7	; 231
+ 6e0:	fe 4f       	sbci	r31, 0xFE	; 254
+ 6e2:	20 81       	ld	r18, Z
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 6e4:	01 96       	adiw	r24, 0x01	; 1
+ 6e6:	65 e1       	ldi	r22, 0x15	; 21
+ 6e8:	70 e0       	ldi	r23, 0x00	; 0
+ 6ea:	20 d1       	rcall	.+576    	; 0x92c <__divmodhi4>
+ 6ec:	90 93 31 01 	sts	0x0131, r25
+ 6f0:	80 93 30 01 	sts	0x0130, r24
+		TxBuffer.Get(c);
+		UDR0 = c;
+ 6f4:	20 93 c6 00 	sts	0x00C6, r18
+ 6f8:	05 c0       	rjmp	.+10     	; 0x704 <__vector_22+0x64>
+	}else{
+		UCSR0B &= ~(1 << UDRIE);
+ 6fa:	e1 ec       	ldi	r30, 0xC1	; 193
+ 6fc:	f0 e0       	ldi	r31, 0x00	; 0
+ 6fe:	80 81       	ld	r24, Z
+ 700:	8f 7d       	andi	r24, 0xDF	; 223
+ 702:	80 83       	st	Z, r24
+	}
+	sei();
+ 704:	78 94       	sei
+}
+ 706:	ff 91       	pop	r31
+ 708:	ef 91       	pop	r30
+ 70a:	bf 91       	pop	r27
+ 70c:	af 91       	pop	r26
+ 70e:	9f 91       	pop	r25
+ 710:	8f 91       	pop	r24
+ 712:	7f 91       	pop	r23
+ 714:	6f 91       	pop	r22
+ 716:	5f 91       	pop	r21
+ 718:	3f 91       	pop	r19
+ 71a:	2f 91       	pop	r18
+ 71c:	0f 90       	pop	r0
+ 71e:	0b be       	out	0x3b, r0	; 59
+ 720:	0f 90       	pop	r0
+ 722:	0f be       	out	0x3f, r0	; 63
+ 724:	0f 90       	pop	r0
+ 726:	1f 90       	pop	r1
+ 728:	18 95       	reti
+
+0000072a <__vector_21>:
+
+ISR(USART0_RX_vect)
+{
+ 72a:	1f 92       	push	r1
+ 72c:	0f 92       	push	r0
+ 72e:	0f b6       	in	r0, 0x3f	; 63
+ 730:	0f 92       	push	r0
+ 732:	11 24       	eor	r1, r1
+ 734:	2f 93       	push	r18
+ 736:	3f 93       	push	r19
+ 738:	4f 93       	push	r20
+ 73a:	5f 93       	push	r21
+ 73c:	6f 93       	push	r22
+ 73e:	7f 93       	push	r23
+ 740:	8f 93       	push	r24
+ 742:	9f 93       	push	r25
+ 744:	af 93       	push	r26
+ 746:	bf 93       	push	r27
+ 748:	ef 93       	push	r30
+	cli();
+ 74a:	f8 94       	cli
+	uint8_t data = UDR0;
+ 74c:	e0 91 c6 00 	lds	r30, 0x00C6
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+
+	bool isEmpty() {return (m_put == m_get);}
+	bool isFull(){
+		int temp = m_put;
+ 750:	20 91 15 01 	lds	r18, 0x0115
+ 754:	30 91 16 01 	lds	r19, 0x0116
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 758:	c9 01       	movw	r24, r18
+ 75a:	01 96       	adiw	r24, 0x01	; 1
+ 75c:	65 e1       	ldi	r22, 0x15	; 21
+ 75e:	70 e0       	ldi	r23, 0x00	; 0
+ 760:	e5 d0       	rcall	.+458    	; 0x92c <__divmodhi4>
+		Inc(m_get);
+		return true;
+	}
+
+	bool Put(const FifoType &Slot){
+		if (isFull())
+ 762:	40 91 17 01 	lds	r20, 0x0117
+ 766:	50 91 18 01 	lds	r21, 0x0118
+ 76a:	84 17       	cp	r24, r20
+ 76c:	95 07       	cpc	r25, r21
+ 76e:	41 f0       	breq	.+16     	; 0x780 <__vector_21+0x56>
+		return false;
+		m_Slots[m_put] = Slot;
+ 770:	d9 01       	movw	r26, r18
+ 772:	a0 50       	subi	r26, 0x00	; 0
+ 774:	bf 4f       	sbci	r27, 0xFF	; 255
+ 776:	ec 93       	st	X, r30
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 778:	90 93 16 01 	sts	0x0116, r25
+ 77c:	80 93 15 01 	sts	0x0115, r24
+	RxBuffer.Put(data);
+	sei();
+ 780:	78 94       	sei
+}
+ 782:	ef 91       	pop	r30
+ 784:	bf 91       	pop	r27
+ 786:	af 91       	pop	r26
+ 788:	9f 91       	pop	r25
+ 78a:	8f 91       	pop	r24
+ 78c:	7f 91       	pop	r23
+ 78e:	6f 91       	pop	r22
+ 790:	5f 91       	pop	r21
+ 792:	4f 91       	pop	r20
+ 794:	3f 91       	pop	r19
+ 796:	2f 91       	pop	r18
+ 798:	0f 90       	pop	r0
+ 79a:	0f be       	out	0x3f, r0	; 63
+ 79c:	0f 90       	pop	r0
+ 79e:	1f 90       	pop	r1
+ 7a0:	18 95       	reti
+
+000007a2 <_GLOBAL__sub_I__ZN5Uart04readERh>:
+
+class Fifo
+{
+	public:
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+ 7a2:	10 92 2f 01 	sts	0x012F, r1
+ 7a6:	10 92 2e 01 	sts	0x012E, r1
+ 7aa:	10 92 31 01 	sts	0x0131, r1
+ 7ae:	10 92 30 01 	sts	0x0130, r1
+ 7b2:	10 92 16 01 	sts	0x0116, r1
+ 7b6:	10 92 15 01 	sts	0x0115, r1
+ 7ba:	10 92 18 01 	sts	0x0118, r1
+ 7be:	10 92 17 01 	sts	0x0117, r1
+ 7c2:	08 95       	ret
+
+000007c4 <_ZN5Uart15writeEh>:
+	}
+	return true;
+}
+
+bool Uart1::write(uint8_t c)
+{
+ 7c4:	e6 2f       	mov	r30, r22
+
+	bool isEmpty() {return (m_put == m_get);}
+	bool isFull(){
+		int temp = m_put;
+ 7c6:	20 91 60 01 	lds	r18, 0x0160
+ 7ca:	30 91 61 01 	lds	r19, 0x0161
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 7ce:	c9 01       	movw	r24, r18
+ 7d0:	01 96       	adiw	r24, 0x01	; 1
+ 7d2:	65 e1       	ldi	r22, 0x15	; 21
+ 7d4:	70 e0       	ldi	r23, 0x00	; 0
+ 7d6:	aa d0       	rcall	.+340    	; 0x92c <__divmodhi4>
+	if (!TxBuffer.isFull()){
+ 7d8:	40 91 62 01 	lds	r20, 0x0162
+ 7dc:	50 91 63 01 	lds	r21, 0x0163
+ 7e0:	84 17       	cp	r24, r20
+ 7e2:	95 07       	cpc	r25, r21
+ 7e4:	79 f0       	breq	.+30     	; 0x804 <_ZN5Uart15writeEh+0x40>
+	}
+
+	bool Put(const FifoType &Slot){
+		if (isFull())
+		return false;
+		m_Slots[m_put] = Slot;
+ 7e6:	d9 01       	movw	r26, r18
+ 7e8:	a5 5b       	subi	r26, 0xB5	; 181
+ 7ea:	be 4f       	sbci	r27, 0xFE	; 254
+ 7ec:	ec 93       	st	X, r30
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 7ee:	90 93 61 01 	sts	0x0161, r25
+ 7f2:	80 93 60 01 	sts	0x0160, r24
+		TxBuffer.Put(c);
+
+		UCSR1B |= (1 << UDRIE1);
+ 7f6:	e9 ec       	ldi	r30, 0xC9	; 201
+ 7f8:	f0 e0       	ldi	r31, 0x00	; 0
+ 7fa:	80 81       	ld	r24, Z
+ 7fc:	80 62       	ori	r24, 0x20	; 32
+ 7fe:	80 83       	st	Z, r24
+
+	}else{
+		return false;
+	}
+return true;
+ 800:	81 e0       	ldi	r24, 0x01	; 1
+ 802:	08 95       	ret
+		TxBuffer.Put(c);
+
+		UCSR1B |= (1 << UDRIE1);
+
+	}else{
+		return false;
+ 804:	80 e0       	ldi	r24, 0x00	; 0
+	}
+return true;
+}
+ 806:	08 95       	ret
+
+00000808 <__vector_33>:
+
+ISR(USART1_UDRE_vect)
+{
+ 808:	1f 92       	push	r1
+ 80a:	0f 92       	push	r0
+ 80c:	0f b6       	in	r0, 0x3f	; 63
+ 80e:	0f 92       	push	r0
+ 810:	11 24       	eor	r1, r1
+ 812:	0b b6       	in	r0, 0x3b	; 59
+ 814:	0f 92       	push	r0
+ 816:	2f 93       	push	r18
+ 818:	3f 93       	push	r19
+ 81a:	5f 93       	push	r21
+ 81c:	6f 93       	push	r22
+ 81e:	7f 93       	push	r23
+ 820:	8f 93       	push	r24
+ 822:	9f 93       	push	r25
+ 824:	af 93       	push	r26
+ 826:	bf 93       	push	r27
+ 828:	ef 93       	push	r30
+ 82a:	ff 93       	push	r31
+	cli();
+ 82c:	f8 94       	cli
+{
+	public:
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+
+	bool isEmpty() {return (m_put == m_get);}
+ 82e:	80 91 62 01 	lds	r24, 0x0162
+ 832:	90 91 63 01 	lds	r25, 0x0163
+	uint8_t c;
+	if (!TxBuffer.isEmpty()){
+ 836:	20 91 60 01 	lds	r18, 0x0160
+ 83a:	30 91 61 01 	lds	r19, 0x0161
+ 83e:	28 17       	cp	r18, r24
+ 840:	39 07       	cpc	r19, r25
+ 842:	79 f0       	breq	.+30     	; 0x862 <__vector_33+0x5a>
+	}
+
+	bool Get(FifoType &Slot){
+		if (isEmpty())
+		return false;
+		Slot = m_Slots[m_get];
+ 844:	fc 01       	movw	r30, r24
+ 846:	e5 5b       	subi	r30, 0xB5	; 181
+ 848:	fe 4f       	sbci	r31, 0xFE	; 254
+ 84a:	20 81       	ld	r18, Z
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 84c:	01 96       	adiw	r24, 0x01	; 1
+ 84e:	65 e1       	ldi	r22, 0x15	; 21
+ 850:	70 e0       	ldi	r23, 0x00	; 0
+ 852:	6c d0       	rcall	.+216    	; 0x92c <__divmodhi4>
+ 854:	90 93 63 01 	sts	0x0163, r25
+ 858:	80 93 62 01 	sts	0x0162, r24
+		TxBuffer.Get(c);
+		UDR1 = c;
+ 85c:	20 93 ce 00 	sts	0x00CE, r18
+ 860:	05 c0       	rjmp	.+10     	; 0x86c <__vector_33+0x64>
+	}else{
+		UCSR1B &= ~(1 << UDRIE);
+ 862:	e9 ec       	ldi	r30, 0xC9	; 201
+ 864:	f0 e0       	ldi	r31, 0x00	; 0
+ 866:	80 81       	ld	r24, Z
+ 868:	8f 7d       	andi	r24, 0xDF	; 223
+ 86a:	80 83       	st	Z, r24
+	}
+	sei();
+ 86c:	78 94       	sei
+}
+ 86e:	ff 91       	pop	r31
+ 870:	ef 91       	pop	r30
+ 872:	bf 91       	pop	r27
+ 874:	af 91       	pop	r26
+ 876:	9f 91       	pop	r25
+ 878:	8f 91       	pop	r24
+ 87a:	7f 91       	pop	r23
+ 87c:	6f 91       	pop	r22
+ 87e:	5f 91       	pop	r21
+ 880:	3f 91       	pop	r19
+ 882:	2f 91       	pop	r18
+ 884:	0f 90       	pop	r0
+ 886:	0b be       	out	0x3b, r0	; 59
+ 888:	0f 90       	pop	r0
+ 88a:	0f be       	out	0x3f, r0	; 63
+ 88c:	0f 90       	pop	r0
+ 88e:	1f 90       	pop	r1
+ 890:	18 95       	reti
+
+00000892 <__vector_32>:
+
+ISR(USART1_RX_vect)
+{
+ 892:	1f 92       	push	r1
+ 894:	0f 92       	push	r0
+ 896:	0f b6       	in	r0, 0x3f	; 63
+ 898:	0f 92       	push	r0
+ 89a:	11 24       	eor	r1, r1
+ 89c:	2f 93       	push	r18
+ 89e:	3f 93       	push	r19
+ 8a0:	4f 93       	push	r20
+ 8a2:	5f 93       	push	r21
+ 8a4:	6f 93       	push	r22
+ 8a6:	7f 93       	push	r23
+ 8a8:	8f 93       	push	r24
+ 8aa:	9f 93       	push	r25
+ 8ac:	af 93       	push	r26
+ 8ae:	bf 93       	push	r27
+ 8b0:	ef 93       	push	r30
+	cli();
+ 8b2:	f8 94       	cli
+	uint8_t data = UDR1;
+ 8b4:	e0 91 ce 00 	lds	r30, 0x00CE
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+
+	bool isEmpty() {return (m_put == m_get);}
+	bool isFull(){
+		int temp = m_put;
+ 8b8:	20 91 47 01 	lds	r18, 0x0147
+ 8bc:	30 91 48 01 	lds	r19, 0x0148
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 8c0:	c9 01       	movw	r24, r18
+ 8c2:	01 96       	adiw	r24, 0x01	; 1
+ 8c4:	65 e1       	ldi	r22, 0x15	; 21
+ 8c6:	70 e0       	ldi	r23, 0x00	; 0
+ 8c8:	31 d0       	rcall	.+98     	; 0x92c <__divmodhi4>
+		Inc(m_get);
+		return true;
+	}
+
+	bool Put(const FifoType &Slot){
+		if (isFull())
+ 8ca:	40 91 49 01 	lds	r20, 0x0149
+ 8ce:	50 91 4a 01 	lds	r21, 0x014A
+ 8d2:	84 17       	cp	r24, r20
+ 8d4:	95 07       	cpc	r25, r21
+ 8d6:	41 f0       	breq	.+16     	; 0x8e8 <__vector_32+0x56>
+		return false;
+		m_Slots[m_put] = Slot;
+ 8d8:	d9 01       	movw	r26, r18
+ 8da:	ae 5c       	subi	r26, 0xCE	; 206
+ 8dc:	be 4f       	sbci	r27, 0xFE	; 254
+ 8de:	ec 93       	st	X, r30
+	}
+
+	private:
+	FifoType m_Slots[BufferSize+1];
+	int m_put, m_get;
+	void Inc (int & Pos) {Pos = (Pos+1)%(BufferSize+1);}
+ 8e0:	90 93 48 01 	sts	0x0148, r25
+ 8e4:	80 93 47 01 	sts	0x0147, r24
+	RxBuffer.Put(data);
+	sei();
+ 8e8:	78 94       	sei
+}
+ 8ea:	ef 91       	pop	r30
+ 8ec:	bf 91       	pop	r27
+ 8ee:	af 91       	pop	r26
+ 8f0:	9f 91       	pop	r25
+ 8f2:	8f 91       	pop	r24
+ 8f4:	7f 91       	pop	r23
+ 8f6:	6f 91       	pop	r22
+ 8f8:	5f 91       	pop	r21
+ 8fa:	4f 91       	pop	r20
+ 8fc:	3f 91       	pop	r19
+ 8fe:	2f 91       	pop	r18
+ 900:	0f 90       	pop	r0
+ 902:	0f be       	out	0x3f, r0	; 63
+ 904:	0f 90       	pop	r0
+ 906:	1f 90       	pop	r1
+ 908:	18 95       	reti
+
+0000090a <_GLOBAL__sub_I__ZN5Uart14readERh>:
+
+class Fifo
+{
+	public:
+	//Constructor
+	Fifo(): m_put(0), m_get(0) {}
+ 90a:	10 92 61 01 	sts	0x0161, r1
+ 90e:	10 92 60 01 	sts	0x0160, r1
+ 912:	10 92 63 01 	sts	0x0163, r1
+ 916:	10 92 62 01 	sts	0x0162, r1
+ 91a:	10 92 48 01 	sts	0x0148, r1
+ 91e:	10 92 47 01 	sts	0x0147, r1
+ 922:	10 92 4a 01 	sts	0x014A, r1
+ 926:	10 92 49 01 	sts	0x0149, r1
+ 92a:	08 95       	ret
+
+0000092c <__divmodhi4>:
+ 92c:	97 fb       	bst	r25, 7
+ 92e:	07 2e       	mov	r0, r23
+ 930:	16 f4       	brtc	.+4      	; 0x936 <__divmodhi4+0xa>
+ 932:	00 94       	com	r0
+ 934:	06 d0       	rcall	.+12     	; 0x942 <__divmodhi4_neg1>
+ 936:	77 fd       	sbrc	r23, 7
+ 938:	08 d0       	rcall	.+16     	; 0x94a <__divmodhi4_neg2>
+ 93a:	0f d0       	rcall	.+30     	; 0x95a <__udivmodhi4>
+ 93c:	07 fc       	sbrc	r0, 7
+ 93e:	05 d0       	rcall	.+10     	; 0x94a <__divmodhi4_neg2>
+ 940:	3e f4       	brtc	.+14     	; 0x950 <__divmodhi4_exit>
+
+00000942 <__divmodhi4_neg1>:
+ 942:	90 95       	com	r25
+ 944:	81 95       	neg	r24
+ 946:	9f 4f       	sbci	r25, 0xFF	; 255
+ 948:	08 95       	ret
+
+0000094a <__divmodhi4_neg2>:
+ 94a:	70 95       	com	r23
+ 94c:	61 95       	neg	r22
+ 94e:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000950 <__divmodhi4_exit>:
+ 950:	08 95       	ret
+
+00000952 <__tablejump_elpm__>:
+ 952:	07 90       	elpm	r0, Z+
+ 954:	f6 91       	elpm	r31, Z
+ 956:	e0 2d       	mov	r30, r0
+ 958:	09 94       	ijmp
+
+0000095a <__udivmodhi4>:
+ 95a:	aa 1b       	sub	r26, r26
+ 95c:	bb 1b       	sub	r27, r27
+ 95e:	51 e1       	ldi	r21, 0x11	; 17
+ 960:	07 c0       	rjmp	.+14     	; 0x970 <__udivmodhi4_ep>
+
+00000962 <__udivmodhi4_loop>:
+ 962:	aa 1f       	adc	r26, r26
+ 964:	bb 1f       	adc	r27, r27
+ 966:	a6 17       	cp	r26, r22
+ 968:	b7 07       	cpc	r27, r23
+ 96a:	10 f0       	brcs	.+4      	; 0x970 <__udivmodhi4_ep>
+ 96c:	a6 1b       	sub	r26, r22
+ 96e:	b7 0b       	sbc	r27, r23
+
+00000970 <__udivmodhi4_ep>:
+ 970:	88 1f       	adc	r24, r24
+ 972:	99 1f       	adc	r25, r25
+ 974:	5a 95       	dec	r21
+ 976:	a9 f7       	brne	.-22     	; 0x962 <__udivmodhi4_loop>
+ 978:	80 95       	com	r24
+ 97a:	90 95       	com	r25
+ 97c:	bc 01       	movw	r22, r24
+ 97e:	cd 01       	movw	r24, r26
+ 980:	08 95       	ret
+
+00000982 <_exit>:
+ 982:	f8 94       	cli
+
+00000984 <__stop_program>:
+ 984:	ff cf       	rjmp	.-2      	; 0x984 <__stop_program>

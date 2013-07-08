@@ -10,7 +10,8 @@
 bool CanDriver::CanInit(uint8_t Baudrate){
 	uint8_t mob;
 		
-	CanReset();
+	//CanReset();
+	CanControl(RESET);
 		
 	CANGIT = 0;
 	CANGIE = 0;
@@ -38,13 +39,18 @@ bool CanDriver::CanInit(uint8_t Baudrate){
 		CANIDM3 = 0;
 		CANIDM4 = 0;
 		}
+		
+		CanIrqTx(ENABLE);
+		CanIrqRx(ENABLE);
+		CanGenIrq(ENABLE);
+		CanControl(ENABLE);
+		loop_until_bit_is_set(CANGSTA, ENFG);
 	return true;
 }
 bool CanDriver::IOControl(uint8_t MObId,  uint8_t MObMode, uint32_t CANAddrLow, uint32_t CANAddrHigh)
 {
 	uint8_t savepage;
-	uint32_t maskId, canId;
-
+	
 	//verify that MOb is free
 	if (MObId > t_MaxMob){
 		return false;
@@ -126,11 +132,11 @@ bool CanDriver::Send(CanPacket *MOb){
 	MObEnableTx();
 		
 	//while(!getbit(CANSTMOB, TXOK));
-	while (!CANSTMOB &(1<< TXOK))
+	while (!CANSTMOB &(1<< TXOK));
 		
 	//clearbit(CANSTMOB, TXOK);
 
-	//PORTB ^= (1<<PB7);
+	PORTB ^= (1<<PB7);
 		
 	return mob;
 }

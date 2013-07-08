@@ -24,6 +24,8 @@
 
   enum MObMode{DISABLED, TX_DATA, RX_DATA, TX_REMOTE, AUTO_REPLY};
 	  
+  enum Status{DISABLE, ENABLE, RESET};
+	  
   extern "C" void CANIT_vect(void) __attribute__ ((signal));
 	  
   //extern class CanDriver t_CAN;
@@ -47,7 +49,21 @@ private:
 	static Fifo<CanPacket,5> TxBuffer;
 	static Fifo<CanPacket,5> RxBuffer;
 	bool CanSpeed(uint8_t Baudrate);
-		      
+	
+	bool CanControl(uint8_t Status){
+		if(Status == ENABLE){
+			CANGCON |= (1<<ENASTB);
+			return true;
+		}else if (Status == DISABLE){
+			CANGCON &= (~(1<<ENASTB));
+			return true;
+		}else{
+			CANGCON = (1<<SWRES);
+			return true;
+		}
+		return false;
+	}      
+	
 	bool CanReset(void){
 		CANGCON = (1<<SWRES);
 		return true;
@@ -63,9 +79,38 @@ private:
 		return true;
 	}
 	
+	bool CanGenIrq(uint8_t Status){
+		if(Status == ENABLE){
+			CANGIE |= (1<<ENIT);
+		}else{
+			CANGIE &= (~(1<<ENIT));
+		}	
+		return true;	
+	}
+	
+	bool CanIrqTx(uint8_t Status){
+		if(Status == ENABLE){
+			CANGIE |= (1<<ENRX);
+		}else{
+			CANGIE &= (~(1<<ENRX));
+		}	
+		return true;
+	}
+	
+	bool CanIrqRx(uint8_t Status){
+		
+		if(Status == ENABLE){
+			CANGIE |= (1<<ENTX);	
+		}else{
+			CANGIE &= (~(1<<ENTX));
+		}	
+		return true;
+	}
+	
 	void CanPageSet(uint8_t MObId){
 		CANPAGE = (MObId << 4);
 	}
+	
 	uint8_t CanPageGet(void){
 		return (CANPAGE >> 4);
 	}
@@ -105,11 +150,13 @@ private:
 	bool MObEnableTx(void){
 		CANCDMOB &= (~(1<<CONMOB1));
 		CANCDMOB |= (1<<CONMOB0);
+		return true;
 	}
 	
 	bool MObEnableRx(void){
 		CANCDMOB |= (1<<CONMOB1);
 		CANCDMOB &= (~(1<<CONMOB0));	
+		return true;
 	}
 	
 	bool MObIrqDisable(uint8_t MObId){
